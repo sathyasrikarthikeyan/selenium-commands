@@ -1,0 +1,80 @@
+chrome Browser Commands
+Command	Description
+driver.get(String URL)	Opens the specified URL in the browser.
+driver.getCurrentUrl()	Returns the current URL of the web page.
+driver.getTitle()	Retrieves the title of the current web page.
+driver.manage().window().maximize()	Maximizes the browser window.
+driver.manage().window().minimize()	Minimizes the browser window.
+driver.manage().window().setSize()	Resizes the browser window to the specified dimensions.
+driver.close()	Closes the current browser window.
+driver.quit()	Closes all browser windows and ends the WebDriver session.
+Command	Description
+
+2.navigation commands
+driver.navigate().to(URL)	Navigates to the specified URL (similar to get() but allows more flexibility).
+driver.navigate().back()	Navigates to the previous page in the browser's history.
+driver.navigate().forward()	Navigates to the next page in the browser's history.
+driver.navigate().refresh()	Refreshes the current web page.
+
+3. Element Locating Commands
+Command	Description
+driver.findElement(By.id())	Locates a single web element using its ID.
+driver.findElement(By.name())	Locates a single web element using its name attribute.
+driver.findElement(By.className())	Locates a single web element using its class name.
+driver.findElement(By.tagName())	Locates a single web element using its HTML tag name.
+driver.findElement(By.linkText())	Locates a link element using the exact link text.
+driver.findElement(By.partialLinkText())	Locates a link element using partial link text.
+driver.findElement(By.cssSelector())	Locates a web element using a CSS Selector.
+driver.findElement(By.xpath())	Locates a web element using an XPath expression.
+driver.findElements(By.locator)	Locates multiple web elements matching the given locator.
+
+4. Interaction Commands
+Command	Description
+element.click()	Clicks on a web element.
+element.sendKeys(String)	Sends input text to a web element (like a text box).
+element.clear()	Clears the content of a text field or text area.
+element.submit()	Submits a form.
+element.getText()	Retrieves the visible text of a web element.
+element.getAttribute()	Retrieves the value of a specified attribute of a web element.
+
+5. Drop-down and Select Commands
+Command	Description
+new Select(element).selectByIndex(int)	Selects an option in a drop-down by its index.
+new Select(element).selectByValue(String)	Selects an option in a drop-down by its value attribute.
+new Select(element).selectByVisibleText()	Selects an option in a drop-down by its visible text.
+new Select(element).getOptions()	Retrieves all options in a drop-down as a list of WebElements.
+
+6. Wait Commands
+Command	Description
+driver.manage().timeouts().implicitlyWait()	Sets an implicit wait, applicable globally for all element searches.
+WebDriverWait.until(ExpectedConditions)	Explicitly waits for a specific condition to be met before proceeding.
+FluentWait.pollingEvery()	Sets up a fluent wait with a polling interval and timeout.
+
+7. Handling Alerts
+Command	Description
+driver.switchTo().alert()	Switches the WebDriver's focus to an alert.
+alert.accept()	Accepts the alert (clicks OK).
+alert.dismiss()	Dismisses the alert (clicks Cancel).
+alert.getText()	Retrieves the text displayed in the alert.
+alert.sendKeys(String)	Sends input text to an alert box.
+
+8. Handling Frames
+Command	Description
+driver.switchTo().frame(index)	Switches to a frame by its index (zero-based).
+driver.switchTo().frame(String)	Switches to a frame by its name or ID.
+driver.switchTo().parentFrame()	Switches focus back to the parent frame.
+driver.switchTo().defaultContent()	Switches focus back to the main document (outside frames).
+
+9. Handling Windows
+Command	Description
+driver.getWindowHandle()	Retrieves the current window handle.
+driver.getWindowHandles()	Retrieves all open window handles.
+driver.switchTo().window(String handle)	Switches the focus to the specified window handle.
+
+10. Actions Class Commands (Advanced Interactions)
+Command	Description
+new Actions(driver).moveToElement()	Moves the mouse pointer to a specific element.
+actions.clickAndHold()	Clicks and holds the mouse button on a web element.
+actions.release()	Releases the held mouse button.
+actions.doubleClick()	Double-clicks on a web element.
+actions.dragAndDrop(source, target)	Drags an element from source to target.
